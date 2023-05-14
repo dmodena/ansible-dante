@@ -1,0 +1,9 @@
+# DANTE SOCKS5 Proxy on Ubuntu
+---
+- hosts: all
+  become: true
+  vars_files: [vars.yml]
+
+  tasks:
+  - name: Install Dante
+    apt: name=dante-server state=latest
