@@ -31,3 +31,9 @@ To run the playbook: `ansible-playbook -l <server_name> -i <inventory> -u <user>
 ## Limitations
 
 Although the configuration file has the setup for IPv6, I wasn't able to successfully test an IPv6 proxy connection.
+
+---
+
+Douglas Modena  
+2023  
+MIT License
