@@ -15,7 +15,7 @@ The inventory is usually located in /etc/ansible/hosts. If you can't find the fi
 
 ### Testing connection
 
-To test if Ansible is able to connect to your servers, run the following command: `ansible all -m ping -i <inventory_file>`
+To test if Ansible is able to connect to your servers, run the following command: `ansible all -m ping -i <inventory_file>`.
 
 ### Variables
 
@@ -27,3 +27,7 @@ Before you run this playbook, you will need to create a **vars.yml** file. This 
 ## Execute
 
 To run the playbook: `ansible-playbook -l <server_name> -i <inventory> -u <user> playbook.yml`
+
+## Limitations
+
+Although the configuration file has the setup for IPv6, I wasn't able to successfully test an IPv6 proxy connection.
