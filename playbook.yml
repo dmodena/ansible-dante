@@ -31,3 +31,17 @@
       state: enabled
       policy: deny
       direction: incoming
+
+  - name: Add Dante user
+    user:
+      name: "{{ username }}"
+      password: "{{ password }}"
+      system: true
+      create_home: false
+      shell: /bin/false
+
+  - name: Restart Dante service
+    systemd:
+      state: restarted
+      daemon_reload: true
+      name: danted.service
