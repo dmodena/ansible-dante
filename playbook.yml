@@ -7,3 +7,27 @@
   tasks:
   - name: Install Dante
     apt: name=dante-server state=latest
+
+  - name: Copy Dante conf file
+    copy:
+      src: ./files/danted.conf
+      dest: /etc/danted.conf
+      owner: root
+      group: root
+      mode: '0644'
+
+  - name: UFW Allow SSH connections
+    ufw:
+      rule: allow
+      name: OpenSSH
+
+  - name: UFW Allow proxy port
+    ufw:
+      rule: allow
+      port: 1080
+
+  - name: UFW Deny all other incoming traffic by default
+    ufw:
+      state: enabled
+      policy: deny
+      direction: incoming
