@@ -32,6 +32,8 @@ To run the playbook: `ansible-playbook -l <server_name> -i <inventory> -u <user>
 
 Although the configuration file has the setup for IPv6, I wasn't able to successfully test an IPv6 proxy connection.
 
+This playbook has been tested with Ubuntu 22.04 and Dante Server v1.4.2. May need adjustments for newer versions of the OS or Dante.
+
 ---
 
 Douglas Modena  
