@@ -5,10 +5,15 @@
   vars_files: [vars.yml]
 
   tasks:
+  - name: Upgrade apt packages
+    apt:
+      name: "*"
+      state: latest
+
   - name: Install Dante
     apt: name=dante-server state=latest
 
-  - name: Copy Dante conf file
+  - name: Copy Dante config file
     copy:
       src: ./files/danted.conf
       dest: /etc/danted.conf
@@ -45,3 +50,6 @@
       state: restarted
       daemon_reload: true
       name: danted.service
+
+  - name: Reboot server
+    reboot:
